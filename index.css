@@ -105,8 +105,12 @@ nav {
   justify-content: space-evenly;
   right: 0;
   margin: 3vw;
-  list-style: none;
+  list-style-type: '🌈 ';
   font-size: 1vw;
+}
+
+.list > a:hover{
+  color: #db006c;
 }
 
 .contact {
@@ -601,11 +605,9 @@ padding: 0.7rem;
     flex-direction: row;
     align-items: flex-start;
     font-size: 1.5vw;
+    list-style: none;
   }
 
-  .list {
-  }
-  
   .contact {
     display: inline;
   }
@@ -682,12 +684,17 @@ width: 100vw;  }
     height: 8vh;
   }
 
+
+  header h1 {
+    font-size: 8vw;
+  }
  .list-option {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
     font-size: 2vw;
   padding: 0;
+  list-style: none;
   }
 
   .list {
@@ -719,7 +726,7 @@ display: none;
     justify-content: end;
     position:relative;
     left: 50vw;
-    top: 250px;
+    top: 270px;
     width: 24vw;
   }
 
