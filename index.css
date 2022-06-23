@@ -4,6 +4,7 @@
   box-sizing: border-box;
 }
 
+
 /* ===== Scrollbar CSS ===== */
   /* Firefox */
   * {
@@ -28,15 +29,13 @@
 
 body {
   height: 100%;
-  width: 100%;
+  width: 100vw;
+  overflow-x: hidden;
 }
 
 header {
   height: 100vh;
-  /* background-image: radial-gradient(circle, #7cec15, #abd000, #c7b300, #d79500, #dd7700, #c27300, #a96e00, #926800, #646a11, #3a652c, #155d41, #01514c);    display: flex;
-    justify-content: center;
-    align-items:center;
-    flex-direction: column; */
+  width: 100vw;
   background-image: linear-gradient(
     to bottom,
     #da004c,
@@ -85,7 +84,7 @@ header img {
 }
 
 nav {
-  font-family: Oswald;
+  font-family: "Oswald", sans-serif;
   display: block;
   height: 100%;
   left: 0;
@@ -97,22 +96,35 @@ nav {
   grid-template-rows: 1fr 3fr 1fr;
   box-shadow: inset 0px 0px 15px 0px rgb(0, 0, 0, 0.7);
 }
-nav .list-option {
+
+.list-option {
   color: #eeeeee;
   border: transparent;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  gap: 2rem;
+  justify-content: space-evenly;
   right: 0;
-  margin: 1rem;
+  margin: 3vw;
   list-style: none;
+  font-size: 1vw;
+}
+
+.contact {
+  display: none;
+}
+
+.icons-list-responsive {
+  display: none;
 }
 
 .photo-container {
   display: flex;
   justify-content: center;
   margin-top: 1rem;
+}
+
+.photo-container-responsive{
+  display: none;
 }
 
 .photo-container img {
@@ -126,7 +138,6 @@ nav .list-option {
 
 .list a {
   text-decoration: none;
-  /* text-decoration-color: none; */
   text-transform: uppercase;
   letter-spacing: 2px;
   color: #eeeeee;
@@ -144,9 +155,8 @@ nav .list-option {
   list-style: none;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   gap: 1rem;
-  margin-left: -1rem;
 }
 
 
@@ -161,7 +171,7 @@ nav .list-option {
   --tooltip-width: 90px;
   --gap-between-tooltip-to-button: calc(var(--tooltip-height) + 3px);
   --button-color: #1163ff;
-  --tooltip-color: #fff;
+  --tooltip-color: #B3AFD3;
   width: var(--width);
   height: var(--height);
   background: var(--button-color);
@@ -270,7 +280,7 @@ nav .list-option {
   --tooltip-height: 35px;
   --tooltip-width: 90px;
   --gap-between-tooltip-to-button: calc(var(--tooltip-height) + 3px);
-  --tooltip-color: #fff;
+  --tooltip-color: #B3AFD3;
   height: var(--height);
   background: var(--button-color);
   position: relative;
@@ -330,25 +340,22 @@ nav .list-option {
 
 .all-information {
   float: right;
-  width: 79vw;
+  width: 80vw;
   padding-left: 2vw;
-    font-family: "Dancing Script", cursive;
+  font-family: "Dancing Script", cursive;
 
 }
 
 /*presentacion*/
 .presentation {
-  display: flex;
-  justify-content: center;
   margin-top: 10vh;
 }
 
 .presentation-container {
   display: grid;
-  /* grid-template-columns: 2fr 1fr; */
   column-gap: 10vw;
-  /* width: 80%; */
   margin-bottom: 5vh;
+  margin-right: 1.3vw;
 }
 
 .text-presentation {
@@ -359,6 +366,7 @@ nav .list-option {
 
 .container-one, .container-two, .container-three {
   padding: 1vw;
+  text-align:justify;
 }
 
 .container-one {
@@ -406,6 +414,7 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
   justify-content: center;
   margin: 2vw;
   font-size: 1.8rem;
+  font-family: "Dancing Script", cursive;
 }
 
 /*SKILLS*/
@@ -487,15 +496,16 @@ margin-bottom: 10vh;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-gap: 2rem;
-
 }
 
+.p-none {
+  visibility: hidden
+}
 .card-project {
   border-radius: 0.5rem;
-  width: 30vw;
-  /* box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px; */
+   width: 30vw;
   box-shadow: 0px 0px 15px 0px #9A79E6;
+margin: 1vw;
 }
 
 .title-card{
@@ -509,7 +519,7 @@ gap: 2rem;
 }
 
 .img-project {
-  width: 30vw;
+  width: 100%;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
@@ -531,13 +541,13 @@ padding: 0.7rem;
 
 .card-button {
   display: flex;
-  justify-content: center;
-  gap: 1.5vw;
+  justify-content: space-evenly;
+  align-items: flex-end;
   padding: 1vw;
 }
 
 .button-project {
-  min-width: 130px;
+ width: 130px;
   height: 40px;
   color: #fff;
   padding: 5px 10px;
@@ -570,4 +580,218 @@ padding: 0.7rem;
   top: 0;
   right: -20px;
   transition: 0.4s;
+}
+
+
+@media only screen and (min-width: 768px) and (max-width:1024px) {
+  .header-container {
+    width: 100vw;
+  }
+  
+  nav {
+    display:grid;
+    grid-template-columns: auto;
+    position:absolute;
+    width: 100%;
+    height: 8vh;
+  }
+
+ .list-option {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    font-size: 1.5vw;
+  }
+
+  .list {
+  }
+  
+  .contact {
+    display: inline;
+  }
+
+  .photo-container  {
+    display: none;
+  }
+
+  .icons-list {
+display: none;
+  }
+
+  .all-information {
+    width: 100vw;
+  }
+
+  .presentation {
+    margin: 0;
+  }
+
+  .text-tech {
+    text-align: center;
+  }
+
+  .presentation-container {
+    margin-right: 2vw;
+  }
+
+  .photo-container-responsive{
+    display: inline-flex;
+    position:relative;
+    left: 550px;
+    top: 180px;
+    width: 24vw;
+  }
+
+  .photo-container-responsive img{
+    width: 12rem;
+  }
+
+  .icons-list-responsive{
+    display: flex;
+    background-color: #00001a ;
+    width: 100%;
+    height: 5vh;
+    padding-top: 0.8vh;
+    justify-content: space-evenly;
+  }
+
+  .card-project {
+    width: 38vw;
+  }
+
+  .p-none {
+  }
+  .card-img {
+    display: flex;
+    justify-content: center;
+  }
+  .img-project {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+    .header-container {
+width: 100vw;  }
+  
+  nav {
+    display:grid;
+    grid-template-columns: auto;
+    position:absolute;
+    width: 100%;
+    height: 8vh;
+  }
+
+ .list-option {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    font-size: 2vw;
+  padding: 0;
+  }
+
+  .list {
+    margin: 1vw;
+  }
+  
+  .photo-container  {
+    display: none;
+  }
+
+  .icons-list {
+display: none;
+  }
+
+  .all-information {
+    width: 100vw;
+  }
+
+  .presentation {
+    margin: 0;
+  }
+
+  .presentation-container {
+    margin-right: 2vw;
+  }
+
+  .photo-container-responsive{
+    display: block;
+    justify-content: end;
+    position:relative;
+    left: 50vw;
+    top: 250px;
+    width: 24vw;
+  }
+
+  .photo-container-responsive img{
+    width: 12rem;
+  }
+
+  .icons-list-responsive{
+    display: flex;
+    background-color: #00001a ;
+    width: 100%;
+    height: 5vh;
+    padding-top: 0.8vh;
+    justify-content: space-evenly;
+  }
+
+  .card-project {
+    width: 70vw;
+    margin-bottom: 2vh;
+  }
+
+  .contact {
+    display: inline;
+  }
+  .card-img {
+    display: flex;
+    justify-content: center;
+  }
+  .img-project {
+    width: 100%;
+  }
+
+
+  .text-presentation {
+    text-align:center;
+  }
+
+  .text-container {
+    gap: 2.5vw
+  }
+
+  .text-p {
+    text-align:center;
+  }
+
+  .skills-container{
+    width: 95%;
+    padding: 2vw;
+  }
+
+  .skills-icon svg {
+    width: 85%;
+  }
+
+  .text-icon {
+    font-size: 3.5vw;
+  }
+
+  .text-tech {
+    text-align: center;
+  }
+
+  .icon-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .card-button {
+    margin-bottom: 1vw;
+  }
+
+  .button-project {
+    width: 100%;
+  }
 }
